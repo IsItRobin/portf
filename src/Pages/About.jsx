@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-scroll";
 import "./About.css";
 
 const About = () => {
@@ -16,8 +17,25 @@ const About = () => {
                 the latest technologies.
             </p>
              <div className="buttons">
-                <button className="btn primary">See My Work</button>
-                <button className="btn secondary">Download CV</button>
+        {/* ✅ SEE MY WORK */}
+        <Link
+          to="projects"
+          smooth
+          duration={500}
+          offset={-70}
+          spy
+        >
+          <button className="btn primary">See My Work</button>
+        </Link>
+                <a
+  href="https://drive.google.com/file/d/10LxpkeGvlGA9wG9a8WhcjSvGPgerXg7m/view?usp=drive_link"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="btn secondary"
+>
+  Download CV
+</a>
+
             </div>
 
             <div className="devices">
