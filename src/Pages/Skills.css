@@ -1,0 +1,51 @@
+.traits {
+  text-align: center;
+  padding: 80px 20px;
+  background: #fff;
+  color: #222;
+  font-family: "Poppins", sans-serif;
+}
+
+.traits-title {
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+.tag {
+  color: #007bff;
+  font-weight: bold;
+  font-family: "Courier New", monospace;
+}
+
+.traits-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+.trait-card {
+  background: #f8f9fc;
+  border-radius: 10px;
+  padding: 25px;
+  width: 280px;
+  text-align: left;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  transition: 0.3s ease;
+}
+
+.trait-card:hover {
+  transform: translateY(-5px);
+}
+
+.trait-card h3 {
+  margin-bottom: 10px;
+  color: #111;
+}
+
+.trait-card p {
+  color: #555;
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
