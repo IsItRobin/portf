@@ -1,0 +1,106 @@
+.hero-section {
+  padding-top: 160px;
+  padding-bottom: 80px;
+  position: relative;
+}
+
+.hero-title-wrapper {
+  margin-bottom: 24px;
+}
+
+.hero-giant-title {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 11vw, 10rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 0.9;
+  color: var(--color-text);
+  text-transform: uppercase;
+}
+
+.hero-subtitle-block {
+  margin-bottom: 70px;
+}
+
+.hero-subtitle-line {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 3vw, 2.5rem);
+  font-weight: 500;
+  color: var(--color-text);
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+.hero-subtitle-line.muted {
+  color: var(--color-text-muted);
+}
+
+/* Infos Box Layout (Exact Matthieu Givelet grid) */
+.infos-box {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: flex-start;
+  padding-top: 36px;
+  width: 100%;
+}
+
+.infos-box-left {
+  padding-right: 40px;
+}
+
+.infos-box-right {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.infos-box-text {
+  font-size: clamp(1.1rem, 1.8vw, 1.6rem);
+  line-height: 1.4;
+  color: var(--color-text);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.editorial-numb-wrap {
+  position: relative;
+  padding-left: 36px;
+}
+
+.editorial-numb-wrap .editorial-numb {
+  position: absolute;
+  top: 4px;
+  left: 0;
+}
+
+.hero-text-secondary {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+.cta-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text);
+  cursor: pointer;
+  width: fit-content;
+}
+
+@media (max-width: 850px) {
+  .hero-section {
+    padding-top: 120px;
+  }
+  .infos-box {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .infos-box-left {
+    padding-right: 0;
+  }
+}

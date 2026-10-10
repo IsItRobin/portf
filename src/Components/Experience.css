@@ -1,0 +1,87 @@
+.experience-section {
+  position: relative;
+}
+
+.experience-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.exp-item-row {
+  position: relative;
+}
+
+.exp-row-grid {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 30px;
+  padding: 44px 0;
+}
+
+.exp-num {
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+}
+
+.exp-header-wrap {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+
+.exp-role {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.5vw, 2.2rem);
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: -0.02em;
+}
+
+.exp-company {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+}
+
+.exp-meta {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  margin-bottom: 16px;
+}
+
+.exp-desc {
+  font-size: 1.05rem;
+  color: var(--color-text);
+  line-height: 1.6;
+  margin-bottom: 20px;
+  max-width: 800px;
+}
+
+.exp-points {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.exp-points li {
+  font-size: 0.98rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+.exp-tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+@media (max-width: 768px) {
+  .exp-row-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}

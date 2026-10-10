@@ -1,33 +1,27 @@
 import React from 'react';
-
 import './App.css';
 import Navbar from './Components/Navbar';
-import About from './Pages/About';
-import Traits from './Pages/Traits';
-import Skills from './Pages/Skills';
-import Projects from './Pages/Projects';
+import Hero from './Components/Hero';
+import Projects from './Components/Projects';
+import Experience from './Components/Experience';
+import Archive from './Components/Archive';
+import About from './Components/About';
+import Contact from './Components/Contact';
+import Footer from './Components/Footer';
 
 function App() {
   return (
     <div className="App">
       <Navbar />
-      <section id="Aboutme">
-  <About />
-</section>
-
-<section id="Skills">
-  <Skills />
-</section>
-
-<section id="projects">
-  <Projects />
-</section>
-
-<section id="contact">
-  <Traits />
-</section>
-
-      
+      <main>
+        <Hero />
+        <Projects />
+        <Experience />
+        <Archive />
+        <About />
+        <Contact />
+      </main>
+      <Footer />
     </div>
   );
 }

@@ -1,0 +1,22 @@
+.editorial-footer {
+  padding: 40px 0 60px 0;
+  position: relative;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 30px;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+.back-top-link {
+  background: none;
+  border: none;
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  color: var(--color-text);
+  cursor: pointer;
+}

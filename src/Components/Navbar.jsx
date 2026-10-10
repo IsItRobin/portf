@@ -1,91 +1,206 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-scroll";
+import { ArrowRightIcon } from "./Icons";
 import "./Navbar.css";
 
 const Navbar = () => {
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    if (isDarkMode) {
+      document.documentElement.setAttribute("data-theme", "dark");
+    } else {
+      document.documentElement.removeAttribute("data-theme");
+    }
+  }, [isDarkMode]);
 
   return (
-    <nav className="navbar">
-      {/* Logo */}
-      <div className="nav-logo">
+    <header className="navbar-header">
+      <nav className="navbar container">
+        {/* Brand Logo */}
         <Link
-            to="Aboutme"
-            smooth={true}
-            duration={500}
-            spy={true}
-            offset={-70}
-            activeClass="active"
-          > Robin Puri</Link>
-       
+          to="hero"
+          smooth={true}
+          duration={600}
+          offset={-100}
+          className="nav-logo"
+        >
+          <span className="logo-copyright">©</span>
+          <span className="logo-name">RobinPuri</span>
+        </Link>
+
+        {/* Desktop Links */}
+        <div className="nav-links-wrapper desktop-only">
+          <ul className="nav-links">
+            <li>
+              <Link
+                to="work"
+                smooth={true}
+                duration={600}
+                spy={true}
+                offset={-100}
+                activeClass="active"
+                className="nav-link link-line"
+              >
+                Work <span className="nav-count">(4)</span>
+              </Link>
+            </li>
+
+            <li>
+              <Link
+                to="experience"
+                smooth={true}
+                duration={600}
+                spy={true}
+                offset={-100}
+                activeClass="active"
+                className="nav-link link-line"
+              >
+                Experience <span className="nav-count">(2)</span>
+              </Link>
+            </li>
+
+            <li>
+              <Link
+                to="archive"
+                smooth={true}
+                duration={600}
+                spy={true}
+                offset={-100}
+                activeClass="active"
+                className="nav-link link-line"
+              >
+                Archive <span className="nav-count">(5)</span>
+              </Link>
+            </li>
+
+            <li>
+              <Link
+                to="about"
+                smooth={true}
+                duration={600}
+                spy={true}
+                offset={-100}
+                activeClass="active"
+                className="nav-link link-line"
+              >
+                About
+              </Link>
+            </li>
+          </ul>
         </div>
 
-      {/* Navigation Links */}
-      <ul
-        className={isMobile ? "nav-links-mobile" : "nav-links"}
-        onClick={() => setIsMobile(false)}
-      >
-        <li>
-          <Link
-            to="Aboutme"
-            smooth={true}
-            duration={500}
-            spy={true}
-            offset={-70}
-            activeClass="active"
+        {/* Right Action Controls */}
+        <div className="nav-actions desktop-only">
+          <button
+            onClick={() => setIsDarkMode(!isDarkMode)}
+            className="theme-toggle-btn"
+            title="Toggle theme"
           >
-            About
-          </Link>
-        </li>
+            <span className="bracket-tag">
+              [{isDarkMode ? "Light Mode" : "Dark Mode"}]
+            </span>
+          </button>
 
-        <li>
-          <Link
-            to="Skills"
-            smooth={true}
-            duration={500}
-            spy={true}
-            offset={-70}
-            activeClass="active"
+          <a
+            href="mailto:purirobin18@gmail.com"
+            className="nav-cta link-line"
           >
-            Skills
-          </Link>
-        </li>
+            Get in touch
+          </a>
+        </div>
 
-        <li>
-          <Link
-            to="projects"
-            smooth={true}
-            duration={500}
-            spy={true}
-            offset={-70}
-            activeClass="active"
-          >
-            Projects
-          </Link>
-        </li>
-      </ul>
+        {/* Mobile Hamburger Toggle */}
+        <button
+          className="burger-button mobile-only"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        >
+          <span>{isMobileMenuOpen ? "[ Close ]" : "[ Menu ]"}</span>
+        </button>
 
-      {/* Added to redirect to linkdin in future we will add more options */}
-      <div className="nav-contact">
-  <a
-    href="https://www.linkedin.com/in/robin-puri/"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="btn"
-  >
-    Get in Touch
-  </a>
-</div>
+        {/* Mobile Fullscreen Menu */}
+        {isMobileMenuOpen && (
+          <div className="mobile-menu-overlay">
+            <div className="mobile-menu-header">
+              <span className="bracket-tag">[ Navigation ]</span>
+              <button
+                className="theme-toggle-btn"
+                onClick={() => setIsDarkMode(!isDarkMode)}
+              >
+                [{isDarkMode ? "Light" : "Dark"}]
+              </button>
+            </div>
 
+            <ul className="mobile-menu-links">
+              <li>
+                <Link
+                  to="hero"
+                  smooth={true}
+                  duration={500}
+                  offset={-80}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="work"
+                  smooth={true}
+                  duration={500}
+                  offset={-80}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Work (4)
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="experience"
+                  smooth={true}
+                  duration={500}
+                  offset={-80}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Experience (2)
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="archive"
+                  smooth={true}
+                  duration={500}
+                  offset={-80}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Archive (5)
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="about"
+                  smooth={true}
+                  duration={500}
+                  offset={-80}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  About
+                </Link>
+              </li>
+            </ul>
 
-      {/* Mobile Menu Icon */}
-      <button
-        className="mobile-menu-icon"
-        onClick={() => setIsMobile(!isMobile)}
-      >
-        {isMobile ? <>&#10005;</> : <>&#9776;</>}
-      </button>
-    </nav>
+            <a
+              href="mailto:purirobin18@gmail.com"
+              className="mobile-cta-btn"
+            >
+              <span>Get in touch</span>
+              <ArrowRightIcon size={18} />
+            </a>
+          </div>
+        )}
+      </nav>
+    </header>
   );
 };
 
